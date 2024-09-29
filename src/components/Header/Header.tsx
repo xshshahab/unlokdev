@@ -4,6 +4,7 @@ import { FiGithub } from "react-icons/fi";
 import { RiMenu3Fill } from "react-icons/ri";
 import { IoClose } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import Logo from "./assets/logo.png";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,8 +26,8 @@ const Header = () => {
   ];
 
   const socialLinks = [
-    { href: "https://github.com/xshshahab", icon: <FiGithub size={24} /> },
-    { href: "https://x.com/xsh_shahab", icon: <FaXTwitter size={24} /> },
+    { href: "https://github.com/xshshahab", icon: <FiGithub size={22} /> },
+    { href: "https://x.com/xsh_shahab", icon: <FaXTwitter size={22} /> },
   ];
 
   return (
@@ -35,14 +36,16 @@ const Header = () => {
       <nav
         className={`fixed z-20 flex items-center justify-between w-full py-2.5 px-5 transition-all duration-300 ${
           isScrolled
-            ? "bg-black/30 backdrop-blur-md bg-opacity-80 shadow-md"
+            ? "bg-sky-600/20 backdrop-blur-md bg-opacity-80 shadow-md border-b border-b-sky-500"
             : "bg-transparent"
         }`}
+        style={{ borderColor: isScrolled ? "#87CEEB" : "transparent" }}
       >
         {/* Left side with logo */}
         <div className="flex items-center gap-3 font-bold text-white">
           <Link to="/" className="flex items-center text-2xl">
-            Unlok <span className="ml-1.5 font-bold text-green-500">Dev</span>
+            <img src={Logo} alt="logo" className="w-10" />
+            Unlok <span className="ml-1.5 font-bold text-sky-400">Dev</span>
           </Link>
         </div>
 
@@ -52,7 +55,7 @@ const Header = () => {
             <Link
               key={to}
               to={to}
-              className="font-semibold text-white hover:text-green-500"
+              className="font-semibold text-white hover:text-sky-400"
             >
               {label}
             </Link>
@@ -63,7 +66,7 @@ const Header = () => {
             <a
               key={href}
               href={href}
-              className="font-semibold text-white hover:text-green-500"
+              className="font-semibold text-white hover:text-sky-400"
             >
               {icon}
             </a>
@@ -71,10 +74,10 @@ const Header = () => {
           <div className="w-0.5 h-6 bg-white bg-opacity-20" />
 
           {/* Login and Sign Up buttons */}
-          <button className="gap-2 font-semibold text-green-500 transition duration-300 hover:text-green-600">
+          <button className="gap-2 font-semibold transition duration-300 text-sky-400 hover:text-sky-500">
             Login
           </button>
-          <button className="px-2.5 py-1.5 font-semibold text-white bg-green-500 rounded transition duration-300 hover:bg-green-600">
+          <button className="px-2.5 py-1.5 font-semibold text-white bg-sky-500 rounded transition duration-300 hover:bg-sky-600">
             Sign Up
           </button>
         </div>
@@ -107,7 +110,7 @@ const Header = () => {
               key={to}
               to={to}
               onClick={toggleSidebar}
-              className="font-semibold text-white hover:text-green-500"
+              className="font-semibold text-white hover:text-sky-400"
             >
               {label}
             </Link>
@@ -119,7 +122,7 @@ const Header = () => {
               key={href}
               href={href}
               onClick={toggleSidebar}
-              className="font-semibold text-white hover:text-green-500"
+              className="font-semibold text-white hover:text-sky-400"
             >
               {icon}
             </a>
@@ -129,13 +132,13 @@ const Header = () => {
           {/* Login and Sign Up buttons in sidebar */}
           <button
             onClick={toggleSidebar}
-            className="w-1/2 px-2 py-2 mt-4 font-semibold text-green-500 transition duration-300 text-start hover:text-green-600"
+            className="w-1/2 px-2 py-2 mt-4 font-semibold transition duration-300 text-sky-400 text-start hover:text-sky-500"
           >
             Login
           </button>
           <button
             onClick={toggleSidebar}
-            className="w-1/2 px-1 py-2 mt-2 font-semibold text-white transition duration-300 bg-green-500 rounded hover:bg-green-600"
+            className="w-1/2 px-1 py-2 mt-2 font-semibold text-white transition duration-300 rounded bg-sky-500 hover:bg-sky-600"
           >
             Sign Up
           </button>

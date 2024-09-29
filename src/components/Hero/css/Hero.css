@@ -1,0 +1,20 @@
+#page1 {
+  position: relative;
+  min-height: 85vh;
+  overflow: hidden; /* Ensures the rotated image doesn't overflow */
+}
+
+#page1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("../assets/Main.jpg");
+  background-size: cover;
+  background-position: center;
+  transform: rotate(180deg);
+  transform-origin: center; /* Ensures rotation happens from the center */
+  z-index: -1; /* Puts the image behind the content */
+}
